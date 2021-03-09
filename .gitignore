@@ -11,6 +11,13 @@
 *.gch
 *.pch
 
+# User-specific stuff
+.idea/
+
+
+# CMake
+cmake-build-*/
+
 # Compiled Dynamic libraries
 *.so
 *.dylib
