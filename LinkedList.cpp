@@ -4,7 +4,7 @@
 #include <iostream>
 #include "LinkedList.h"
 
-void LinkedList::addFront(int _data) {
+void LinkedList::push(int _data) {
     if (head == NULL)
         head = new Node(_data);
     else {
@@ -15,6 +15,34 @@ void LinkedList::addFront(int _data) {
 }
 bool LinkedList::isEmpty() {
     return head == NULL;
+}
+Node* LinkedList::deleteData(int _data) {
+    cout << "Current head: "<< endl;
+    cout << head->getData() << endl;
+    cout << &head<< endl;
+    if(!isEmpty()){
+        if(_data == head->data){
+            Node * tmp = head;
+            head = head->next;
+            tmp->next = NULL;
+            return tmp;
+        }
+        else{
+            Node * prev = this->head;
+            Node * curr = this->head;
+            while (curr != NULL){
+                if(curr->getData() == _data){
+                    prev->next = curr->next;
+                    curr->next = NULL;
+                    return curr;
+                }
+                prev = curr;
+                curr = curr->next;
+            }
+        }
+    }
+    return NULL;
+
 }
 void LinkedList::printList() {
     if (!isEmpty()){

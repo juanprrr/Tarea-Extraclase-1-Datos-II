@@ -2,12 +2,14 @@
 // Created by juanpr on 5/3/21.
 //
 
-#ifndef EXTRA_CLASE_I_NODE_H
-#define EXTRA_CLASE_I_NODE_H
+#ifndef TAREA_EXTRACLASE_1_DATOS_II_NODE_H
+#define TAREA_EXTRACLASE_1_DATOS_II_NODE_H
 #include <cstdlib>
+#include<iostream>
 
-
+using namespace std;
 class Node {
+
 public:
     //
     int data;
@@ -44,7 +46,16 @@ public:
         next = _next;
 
     }
+    void * operator new(size_t size){
+        //cout<< "Overloading new operator with size: " << size << endl;
+        void * p = ::new Node();
+        return p;
+
+    }
+    void operator delete(void * p){
+        cout<< "Overloading delete operator " << endl;
+        free(p);
+
+    }
 };
-
-
-#endif //EXTRA_CLASE_I_NODE_H
+#endif //TAREA_EXTRACLASE_1_DATOS_II_NODE_H

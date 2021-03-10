@@ -2,10 +2,8 @@
 // Created by juanpr on 5/3/21.
 //
 
-#ifndef EXTRA_CLASE_I_LINKEDLIST_H
-#define EXTRA_CLASE_I_LINKEDLIST_H
-
-
+#ifndef TAREA_EXTRACLASE_1_DATOS_II_LINKEDLIST_H
+#define TAREA_EXTRACLASE_1_DATOS_II_LINKEDLIST_H
 #include "Node.h"
 
 class LinkedList {
@@ -17,12 +15,15 @@ public:
         head = NULL;
     }
     bool isEmpty();
-    void addFront(int _data);
+    void push(int _data);
     Node* deleteData(int _data);
     void printList();
+    Node* getHead(){
+        return head;
+    }
 
 
 };
 
 
-#endif //EXTRA_CLASE_I_LINKEDLIST_H
+#endif //TAREA_EXTRACLASE_1_DATOS_II_LINKEDLIST_H

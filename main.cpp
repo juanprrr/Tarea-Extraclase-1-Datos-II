@@ -4,11 +4,19 @@ int main() {
 
     LinkedList * myList =  new LinkedList();
 
-    myList->addFront(1);
-    myList->addFront(2);
-    myList->addFront(3);
-    myList->addFront(4);
-    myList->addFront(5);
+    myList->push(1);
+    myList->push(2);
+    myList->push(3);
+    myList->push(4);
+    myList->printList();
+    myList->deleteData(4);
+
+    myList->push(5);
+    myList->printList();
+    myList->deleteData(2);
+    myList->printList();
+    myList->push(6);
+    myList->deleteData(1);
     myList->printList();
     return 0;
 }
