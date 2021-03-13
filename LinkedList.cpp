@@ -6,26 +6,33 @@
 
 void LinkedList::push(int _data) {
     if (head == NULL)
-        head = new Node(_data);
+        head = collector->giveSpace(_data);
+
     else {
-        Node * tmp = new Node(_data);
+        Node * tmp = collector->giveSpace(_data);
         tmp->next = head;
         head = tmp;
+        cout<<"------Push an integer-------"<<endl;
+        cout<< "New Data: "<< head->data<<endl;
+        cout << "Address collected: "<< &(head->data)<<endl;
+
     }
 }
+
 bool LinkedList::isEmpty() {
     return head == NULL;
 }
 Node* LinkedList::deleteData(int _data) {
-    cout << "Current head: "<< endl;
-    cout << head->getData() << endl;
-    cout << &head<< endl;
+    cout << "To delete: "<< endl;
+    cout << _data << endl;
+    
     if(!isEmpty()){
         if(_data == head->data){
             Node * tmp = head;
             head = head->next;
             tmp->next = NULL;
-            return tmp;
+            collector->collectSpace(tmp);
+            return nullptr;
         }
         else{
             Node * prev = this->head;
@@ -34,7 +41,8 @@ Node* LinkedList::deleteData(int _data) {
                 if(curr->getData() == _data){
                     prev->next = curr->next;
                     curr->next = NULL;
-                    return curr;
+                    collector->collectSpace(curr);
+                    return nullptr;
                 }
                 prev = curr;
                 curr = curr->next;
@@ -45,8 +53,12 @@ Node* LinkedList::deleteData(int _data) {
 
 }
 void LinkedList::printList() {
+    cout<<"----Collector list----"<<endl;
+    collector->printCollector();
+
     if (!isEmpty()){
         Node * tmp = head;
+        cout <<"----Current list----- "<<endl;
         while (tmp != NULL){
             std::cout << tmp->data << " ";
             tmp = tmp->next;

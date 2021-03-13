@@ -10,13 +10,11 @@ int main() {
     myList->push(4);
     myList->printList();
     myList->deleteData(4);
-
     myList->push(5);
     myList->printList();
     myList->deleteData(2);
     myList->printList();
     myList->push(6);
-    myList->deleteData(1);
     myList->printList();
     return 0;
 }

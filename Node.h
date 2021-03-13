@@ -7,20 +7,20 @@
 #include <cstdlib>
 #include<iostream>
 
-using namespace std;
-class Node {
 
+using namespace std;
+
+class Node {
 public:
     //
     int data;
     Node * next;
 
     Node(){
-        data = 0;
-        next = NULL;
+        next = nullptr;
 
     }
-    Node (int _data){
+    explicit Node (int _data){
         data  = _data;
         next = NULL;
 
@@ -47,12 +47,14 @@ public:
 
     }
     void * operator new(size_t size){
+
         //cout<< "Overloading new operator with size: " << size << endl;
         void * p = ::new Node();
         return p;
 
     }
     void operator delete(void * p){
+
         cout<< "Overloading delete operator " << endl;
         free(p);
 
