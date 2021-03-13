@@ -3,7 +3,7 @@
 //
 #include <iostream>
 #include "LinkedList.h"
-
+//Método que se comunica con collector para pedir un nuevo nodo y agregarlo al frente de la lista
 void LinkedList::push(int _data) {
     if (head == NULL)
         head = collector->giveSpace(_data);
@@ -18,14 +18,15 @@ void LinkedList::push(int _data) {
 
     }
 }
-
+//Método que verifica si la lista está vacía
 bool LinkedList::isEmpty() {
     return head == NULL;
 }
+//Método que se comunica con collector para borrar un nodo en lista y reciclar su espacio
 Node* LinkedList::deleteData(int _data) {
     cout << "To delete: "<< endl;
     cout << _data << endl;
-    
+
     if(!isEmpty()){
         if(_data == head->data){
             Node * tmp = head;
@@ -60,7 +61,7 @@ void LinkedList::printList() {
         Node * tmp = head;
         cout <<"----Current list----- "<<endl;
         while (tmp != NULL){
-            std::cout << tmp->data << " ";
+            std::cout << tmp->data << "->"<< " ";
             tmp = tmp->next;
         }
         std::cout << std::endl;

@@ -6,7 +6,9 @@
 #define TAREA_EXTRACLASE_1_DATOS_II_LINKEDLIST_H
 
 #include "Collector.h"
-
+/**
+ * Clase LinkedList que representa la estructura para almacenar un conjunto de datos
+ */
 class LinkedList {
 private:
     Node * head;

@@ -17,6 +17,7 @@ void Collector::collectSpace(Node * _node) {
     }
 
 }
+//Método que retorna un nodo del collector para que sea reusado por la lista enlazada
 Node* Collector::giveSpace(int _data) {
     if (head == nullptr){
         return new Node(_data);

@@ -9,7 +9,10 @@
 
 
 using namespace std;
-
+/**
+ * Clase Node que representa un dato para hacer una lista enlazada, cada dato compuesto por
+ * un numero entero y un puntero al siguiente nodo
+ */
 class Node {
 public:
     //
